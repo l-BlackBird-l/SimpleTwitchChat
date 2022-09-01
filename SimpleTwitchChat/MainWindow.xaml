@@ -1,0 +1,16 @@
+﻿<Window x:Class="SimpleTwitchChat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleTwitchChat" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+        mc:Ignorable="d"
+        Title="TwitchChat" x:Name="Main" Height="450" Width="900" WindowStartupLocation="CenterScreen" Style="{DynamicResource CustomWindowStyle}" Closing="Main_Closing">
+    <Grid>
+        <ScrollViewer x:Name="Scroller" Margin="0">
+            <StackPanel x:Name="Panels" CanVerticallyScroll="True">
+            </StackPanel>
+        </ScrollViewer>
+        <controls:AutoCompleteBox Height="30" x:Name="Message" VerticalAlignment="Bottom" Background="#FF0C0C0C" BorderThickness="0,2,0,0" FontFamily="Consolas" FontSize="16" Padding="5" KeyDown="Message_KeyDown" Visibility="Hidden" TextChanged="Message_TextChanged" Foreground="White"/>
+    </Grid>
+</Window>
