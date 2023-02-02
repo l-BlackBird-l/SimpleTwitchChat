@@ -34,7 +34,8 @@ namespace SimpleTwitchChat
         }
         public void Start()
         {
-            ConnectionCredentials credentials = new ConnectionCredentials("l_Black_Bird_l", "oauth:yl08t2ft83tky4hdk7i48hlcjppucu");
+            // Your oauth you can get here: https://twitchapps.com/tmi/
+            ConnectionCredentials credentials = new ConnectionCredentials("l_Black_Bird_l", "oauth: YOUR OAUTH HERE");
             var clientOptions = new ClientOptions
             {
                 MessagesAllowedInPeriod = 750,
