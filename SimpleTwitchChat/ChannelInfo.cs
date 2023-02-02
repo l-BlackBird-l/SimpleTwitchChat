@@ -14,6 +14,9 @@ namespace SimpleTwitchChat
 {
     internal class ChannelInfo
     {
+
+        // _ID and acess you can get here: https://twitchtokengenerator.com/
+
         string _id = "PASTE YOUR ID HERE";
 
         string streamer_name = "";
