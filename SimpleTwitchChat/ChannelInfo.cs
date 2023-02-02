@@ -14,12 +14,12 @@ namespace SimpleTwitchChat
 {
     internal class ChannelInfo
     {
-        string _id = "ytqmaf001z01x5uai9bjkinpbh20d3";
-        string _secret = "aswueqtjecfdo7deoz0hs53ru7nr8y";
+        string _id = "PASTE YOUR ID HERE";
+
         string streamer_name = "";
-        string access = "Bearer 2c7fw8hqvgsmbigabbplolbixr8nlu";
+        string access = "Bearer (ADD YOUR ACCESS HERE)";
         MainWindow main;
-        PyPoints points;
+
         bool connect = false;
         public ChannelInfo(string Channel, MainWindow main)
         {
@@ -29,10 +29,6 @@ namespace SimpleTwitchChat
 
             Thread LT = new Thread(new ThreadStart(StreamState));
             LT.Start();
-
-
-
-            points = new PyPoints("PointCount.py", streamer_name);
 
         }
 
@@ -101,7 +97,7 @@ namespace SimpleTwitchChat
                                 StreamName = theValue.ToString();
 
 
-                            GenerateTitle = "Name: " + StreamName + " | Viewers: " + viewers+ " | Points: " + points.GetPoints() + " | Title: " + title;
+                            GenerateTitle = "Name: " + StreamName + " | Viewers: " + viewers+ " | Title: " + title;
                                 Application.Current.Dispatcher.Invoke((Action)delegate
                                 {
                                 try
@@ -129,8 +125,9 @@ namespace SimpleTwitchChat
                     string StreamName = "";
                     string title = "";
                     string viewers = "";
-                    string Url = "https://api.twitch.tv/helix/streams?user_login=" + streamer_name;
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+                string Url = "https://api.twitch.tv/helix/streams?user_login=" + streamer_name;
+               // string Url = "https://api.twitch.tv/helix/users?login=" + streamer_name;
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
 
                     request.Method = "Get";
                     request.Timeout = 5000;
@@ -160,8 +157,8 @@ namespace SimpleTwitchChat
                                 isReal = false;
                             
                             }
-                        PyPoints points = new PyPoints("PointCount.py", streamer_name);
-                        GenerateTitle = "Name: " + StreamName + " | Viewers: " + viewers + " | Points: " + points.GetPoints() + " | Title: " + title;
+
+                        GenerateTitle = "Name: " + StreamName + " | Viewers: " + viewers + " | Title: " + title;
 
                         Application.Current.Dispatcher.Invoke((Action)delegate
                                 {

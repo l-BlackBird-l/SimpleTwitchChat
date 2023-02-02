@@ -52,36 +52,34 @@ namespace SimpleTwitchChat
             main.client = client;
             main.TwitchChannel = TwitchChannel;
             //   var test = client.;
-            Thread LT = new Thread(new ThreadStart(AutoPoints));
-            LT.Start();
+
         }
 
-        void AutoPoints()
-        {
-        PyPoints points = new PyPoints("main.py", TwitchChannel);
-        points.GetPoints();
-        }
+
 
         private void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e) /// Output message
         {
             Application.Current.Dispatcher.Invoke((Action)delegate
             {
-                output output = new output();
-                output.Texts.Text = "> " +  e.ChatMessage.DisplayName + " : " + e.ChatMessage.Message;
-                main.Panels.Children.Add(output);
-                main.Scroller.ScrollToEnd();
-
-                foreach (var item in main.Users)
+            output output = new output();
+                if (e.ChatMessage.DisplayName != "halle35")
                 {
-                    if (item != e.ChatMessage.DisplayName)
+                    output.Texts.Text = "> " + e.ChatMessage.DisplayName + " : " + e.ChatMessage.Message;
+                    main.Panels.Children.Add(output);
+                    main.Scroller.ScrollToEnd();
+
+                    foreach (var item in main.Users)
                     {
-                        
-                        main.Users.Add("@" + e.ChatMessage.DisplayName);
-                        break;
+                        if (item != e.ChatMessage.DisplayName)
+                        {
+
+                            main.Users.Add("@" + e.ChatMessage.DisplayName);
+                            break;
+                        }
                     }
-                }      
-                
+                }
             });
+        
         }
 
     }

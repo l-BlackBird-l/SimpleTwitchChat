@@ -160,7 +160,6 @@
     <Compile Include="Input.xaml.cs">
       <DependentUpon>Input.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PyPoints.cs" />
     <Compile Include="TwitchAPI.cs" />
     <Page Include="DarkTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -216,52 +215,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="twitch-cookies.pkl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="__pycache__\claim_bonus.cpython-310.pyc" />
-    <None Include="__pycache__\cookies.cpython-310.pyc" />
-    <None Include="__pycache__\exceptions.cpython-310.pyc" />
-    <None Include="__pycache__\login.cpython-310.pyc" />
-    <None Include="__pycache__\pubsub.cpython-310.pyc" />
-    <None Include="__pycache__\raid.cpython-310.pyc" />
-    <None Include="__pycache__\twitch_data.cpython-310.pyc" />
-    <None Include="__pycache__\watch_minute.cpython-310.pyc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="claim_bonus.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="cookies.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="exceptions.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="login.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="main.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PointCount.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="pubsub.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="raid.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="twitch_data.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="watch_minute.py">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.1\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.1\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
